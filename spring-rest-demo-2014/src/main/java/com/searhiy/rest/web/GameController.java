@@ -1,4 +1,4 @@
-package org.demo.rest.web;
+package com.searhiy.rest.web;
 
 /**
  * Created by serhii on 27.11.14.
