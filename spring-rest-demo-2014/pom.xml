@@ -18,8 +18,7 @@
   <properties>
     <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <testng.version>6.8.8</testng.version>
+    <commons-lang3.version>3.1</commons-lang3.version>
   </properties>
 
   <!-- TODO 1: Spring Boot Starter Web, Spring Boot Starter Test -->
@@ -32,6 +31,16 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.14.8</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${commons-lang3.version}</version>
     </dependency>
   </dependencies>
 

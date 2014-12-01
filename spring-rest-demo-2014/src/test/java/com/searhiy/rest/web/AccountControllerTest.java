@@ -17,7 +17,7 @@ import org.springframework.web.context.WebApplicationContext;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Application.class)
 @WebAppConfiguration
-public class GameControllerTest {
+public class AccountControllerTest {
 
     private MockMvc mockMvc;
 
