@@ -87,6 +87,20 @@ public class InMemoryBankRepository implements AccountRepository, CreditCardRepo
     }
 
     @Override
+    public CreditCard retrieveCreditCard(Long cardNumber) throws CreditCardDoesNotExist {
+        synchronized (this.monitor){
+            for (Account account : accounts.values()) {
+                for (CreditCard creditCard : account.getCreditCards()) {
+                    if (cardNumber.equals(creditCard.getCardNumber())){
+                        return creditCard;
+                    }
+                }
+            }
+        }
+        throw new CreditCardDoesNotExist(cardNumber);
+    }
+
+    @Override
     public Collection<CreditCard> listCreditCards(Long account_id) throws AccountDoesNotExist {
         synchronized (this.monitor){
             Account account = retrieveAccount(account_id);
