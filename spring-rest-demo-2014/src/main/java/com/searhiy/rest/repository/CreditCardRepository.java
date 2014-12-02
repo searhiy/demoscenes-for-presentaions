@@ -1,16 +1,21 @@
 package com.searhiy.rest.repository;
 
+import com.searhiy.rest.model.AccountDoesNotExist;
 import com.searhiy.rest.model.CreditCard;
 import com.searhiy.rest.model.CreditCardDoesNotExist;
+
+import java.util.Collection;
 
 /**
  * Created by serhii on 01.12.14.
  */
 public interface CreditCardRepository {
 
-    CreditCard createCreditCard(Long accountId);
+    CreditCard createCreditCard(Long accountId) throws AccountDoesNotExist;
 
-    CreditCard retrieveCreditCard(Long id) throws CreditCardDoesNotExist;
+    CreditCard retrieveCreditCard(Long accountId, Long cardNumber) throws AccountDoesNotExist, CreditCardDoesNotExist;
 
-    CreditCard deleteCreditCard(Long id) throws CreditCardDoesNotExist;
+    Collection<CreditCard> listCreditCards(Long accountId) throws AccountDoesNotExist;
+
+    void lockCreditCard(Long accountId, Long cardNumber) throws CreditCardDoesNotExist, AccountDoesNotExist;
 }
