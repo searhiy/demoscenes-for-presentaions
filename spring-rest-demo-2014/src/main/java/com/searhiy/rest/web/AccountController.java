@@ -77,7 +77,7 @@ public class AccountController {
     }
 
     @RequestMapping(
-            method = RequestMethod.DELETE,
+            method = RequestMethod.PUT,
             value = "/{account_id}/creditcards/{credit_card_id}")
     @ResponseStatus(HttpStatus.OK)
     public void lockingCreditCard(@PathVariable Long account_id, @PathVariable Long credit_card_id) throws AccountDoesNotExist, CreditCardDoesNotExist {

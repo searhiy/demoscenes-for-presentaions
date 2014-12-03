@@ -57,9 +57,14 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
 }
-ol, ul {
-    list-style: none;
-}
+
+/*.step ul {
+    list-style-type: square;
+    font-size: 1.4em;
+    text-align: left;
+    line-height: 1.5em;
+    list-style-position: inside;
+}*/
 blockquote, q {
     quotes: none;
 }
@@ -178,6 +183,10 @@ a:focus {
     font-family: 'PT Serif', georgia, serif;
     font-size: 48px;
     line-height: 1.5;
+}
+
+.greyb {
+    background-color: darkgray;
 }
 
 /*
