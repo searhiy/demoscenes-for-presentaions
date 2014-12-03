@@ -22,8 +22,8 @@ public class TransferController {
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void createClient(@RequestBody Transaction transaction) throws CreditCardDoesNotExist {
-        transferService.transfer(transaction);
+    public String createClient(@RequestBody Transaction transaction) throws CreditCardDoesNotExist {
+        return transferService.transfer(transaction);
     }
 
 }

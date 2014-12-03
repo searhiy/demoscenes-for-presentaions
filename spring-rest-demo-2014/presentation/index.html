@@ -296,6 +296,99 @@
         </ul>
     </div>
 
+    <div id="10" class="step slide" data-x="-1000" data-y="-700">
+        <q>List the current accounts in bank</q>
+        <br/>
+        <ul>
+            <li>Need to return to us a collection that represents</li>
+            <li>Design doesn't have Account1, Account2, Account..., just accounts</li>
+        </ul>
+        <br/>
+        <p class="greyb"><i>GET /accounts</i></p>
+        <p class="greyb"><i>[{"id":0,"name":"Mike"}, {...}, {...}]</i></p>
+    </div>
+
+    <div id="11" class="step slide" data-x="0" data-y="-700">
+        <q>Create new account</q>
+        <br/>
+        <ul>
+            <li>Need to create new account in bank with providing name of person</li>
+            <li>Good practice is returning already created account</li>
+        </ul>
+        <br/>
+        <p class="greyb"><i>POST /accounts with json {"name":"Matt"}</i></p>
+        <p class="greyb"><i>{"id":2,"name":"Matt"}</i></p>
+    </div>
+
+    <div id="12" class="step slide" data-x="1000" data-y="-700">
+        <q>Create new credit card</q>
+        <br/>
+        <ul>
+            <li>That just a request for creation credit card automatically</li>
+        </ul>
+        <br/>
+        <p class="greyb"><i>POST /accounts/2/creditcards</i></p>
+        <p class="greyb"><i>{"pin":1111,
+            "cardNumber":2,
+            "cardStatus":"ACTIVE",
+            "remnant":0.0}</i></p>
+    </div>
+
+    <div id="13" class="step slide" data-x="2000" data-y="-700">
+        <q>List the current credit cards of account</q>
+        <br/>
+        <ul>
+            <li>Need to return to us a collection of all available credit cards</li>
+        </ul>
+        <br/>
+        <p class="greyb"><i>GET /accounts/2/creditcards</i></p>
+        <p class="greyb"><i>[
+            {"pin":1111,
+            "cardNumber":2,
+            "cardStatus":"ACTIVE",
+            "remnant":0.0}
+            ]</i></p>
+    </div>
+
+    <div id="14" class="step slide" data-x="3000" data-y="-700">
+        <q>Make transaction between two credit cards</q>
+        <br/>
+        <ul>
+            <li>Transaction be running during some time</li>
+            <li>Possible situation when you created just a request for transaction and receive just info when this will be precessed</li>
+        </ul>
+        <br/>
+        <p class="greyb"><i>POST /accounts/2/creditcards with json {"fromCreditCard": "1",
+            "toCreditCard": "2",
+            "amount": "20"}</i></p>
+        <p class="greyb"><i>Transaction successfully processed</i></p>
+    </div>
+
+    <div id="15" class="step slide" data-x="4000" data-y="-700">
+        <q>Lock Credit Card</q>
+        <br/>
+        <ul>
+            <li>Changed status of credit card</li>
+        </ul>
+        <br/>
+        <p class="greyb"><i>PUT /accounts/2/creditcards/2 </i></p>
+        <p class="greyb"><i>{"pin":1111,
+            "cardNumber":2,
+            "cardStatus":"LOCKED",
+            "remnant":20.0}</i></p>
+    </div>
+
+    <div id="16" class="step slide" data-x="5000" data-y="-700">
+        <q>Delete account</q>
+        <br/>
+        <ul>
+            <li>No input required</li>
+            <li>No output required</li>
+        </ul>
+        <br/>
+        <p class="greyb"><i>DELETE /accounts/2 </i></p>
+    </div>
+
 
     <!--
         

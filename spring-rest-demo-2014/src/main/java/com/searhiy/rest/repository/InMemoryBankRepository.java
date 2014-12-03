@@ -109,14 +109,20 @@ public class InMemoryBankRepository implements AccountRepository, CreditCardRepo
     }
 
     @Override
-    public void lockCreditCard(Long accountId, Long cardNumber) throws CreditCardDoesNotExist, AccountDoesNotExist {
+    public CreditCard changeStatusOfCreditCard(Long accountId, Long cardNumber) throws CreditCardDoesNotExist, AccountDoesNotExist {
         synchronized (this.monitor){
             Account account = retrieveAccount(accountId);
             for (CreditCard creditCard : account.getCreditCards()) {
                 if (cardNumber.equals(creditCard.getCardNumber())){
-                    creditCard.setCardStatus(CardStatus.LOCKED);
+                    if (creditCard.getCardStatus() == CardStatus.ACTIVE){
+                        creditCard.setCardStatus(CardStatus.LOCKED);
+                    } else {
+                        creditCard.setCardStatus(CardStatus.ACTIVE);
+                    }
+                    return creditCard;
                 }
             }
         }
+        throw new CreditCardDoesNotExist(cardNumber);
     }
 }

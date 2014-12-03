@@ -18,7 +18,7 @@ public class TransferService {
     @Autowired
     private InMemoryBankRepository inMemoryBankRepository;
 
-    public void transfer(Transaction transaction) throws CreditCardDoesNotExist {
+    public String transfer(Transaction transaction) throws CreditCardDoesNotExist {
         synchronized (this.monitor){
             CreditCard toCreditCard = inMemoryBankRepository.retrieveCreditCard(transaction.getToCreditCard());
             double amount = transaction.getAmount();
@@ -31,6 +31,7 @@ public class TransferService {
             } else {
                 toCreditCard.setRemnant(toCreditCard.getRemnant() + amount);
             }
+            return "Transaction successfully processed";
         }
     }
 

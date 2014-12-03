@@ -19,5 +19,5 @@ public interface CreditCardRepository {
 
     Collection<CreditCard> listCreditCards(Long accountId) throws AccountDoesNotExist;
 
-    void lockCreditCard(Long accountId, Long cardNumber) throws CreditCardDoesNotExist, AccountDoesNotExist;
+    CreditCard changeStatusOfCreditCard(Long accountId, Long cardNumber) throws CreditCardDoesNotExist, AccountDoesNotExist;
 }

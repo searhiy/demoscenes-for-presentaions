@@ -54,7 +54,6 @@ public class AccountController {
 
     @RequestMapping(
             method = RequestMethod.POST,
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             value = "/{account_id}/creditcards")
     @ResponseStatus(HttpStatus.CREATED)
     public CreditCard createCreditCard(@PathVariable Long account_id) throws AccountDoesNotExist {
@@ -80,7 +79,7 @@ public class AccountController {
             method = RequestMethod.PUT,
             value = "/{account_id}/creditcards/{credit_card_id}")
     @ResponseStatus(HttpStatus.OK)
-    public void lockingCreditCard(@PathVariable Long account_id, @PathVariable Long credit_card_id) throws AccountDoesNotExist, CreditCardDoesNotExist {
-        inMemoryBankRepository.lockCreditCard(account_id, credit_card_id);
+    public CreditCard lockingCreditCard(@PathVariable Long account_id, @PathVariable Long credit_card_id) throws AccountDoesNotExist, CreditCardDoesNotExist {
+        return inMemoryBankRepository.changeStatusOfCreditCard(account_id, credit_card_id);
     }
 }
