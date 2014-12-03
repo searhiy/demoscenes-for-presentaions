@@ -389,6 +389,116 @@
         <p class="greyb"><i>DELETE /accounts/2 </i></p>
     </div>
 
+    <div id="its" class="step" data-x="6000" data-y="-300" data-rotate="90" data-scale="2">
+        <p><strong>live demo</strong>: Implementation with Spring MVC
+            <a href="http://localhost:8080/accounts">localhost:8080/accounts</a> </p>
+    </div>
+
+    <div id="17" class="step slide" data-x="7000" data-y="-700">
+        <q>Status codes</q>
+        <br/>
+        <ul>
+            <li>Status codes indicates the results of the server's attempt to satisfy the request</li>
+            <li>Broadly divided into categories</li>
+            <p>1XX: Informational</p>
+            <p>2XX: Success</p>
+            <p>3XX: Redirection</p>
+            <p>4XX: Client Error</p>
+            <p>5XX: Server Error</p>
+        </ul>
+    </div>
+
+    <div id="18" class="step slide" data-x="-1000" data-y="100">
+        <q>Success Status Codes</q>
+        <br/>
+        <ul>
+            <li><i>200 OK</i></li>
+            <p>Everything worked</p>
+            <li><i>201 Created</i></li>
+            <p>The server has successfully created a new resource</p>
+            <p>Newly created resource’s location returned in the Location header</p>
+            <li><i>202 Accepted</i></li>
+            <p>The server has accepted the request, but it is not yet complete</p>
+            <p>A location to determine the request’s current status can be returned in the Location header</p>
+        </ul>
+    </div>
+
+    <div id="19" class="step slide" data-x="0" data-y="100">
+        <q>Client Error Status Codes</q>
+        <br/>
+        <ul>
+            <li><i>400 Bad Request</i></li>
+            <p>Malformed syntax</p>
+            <p>Should not be repeated without modification</p>
+            <li><i>401 Unauthorized</i></li>
+            <p>Authentication is required</p>
+            <p>Includes a WWW-­‐Authenticate header</p>
+            <li><i>403 Forbidden</i></li>
+            <p>Server has understood but refuses to honor the request</p>
+            <p>Should not be repeated without modification</p>
+        </ul>
+    </div>
+
+    <div id="20" class="step slide" data-x="1000" data-y="100">
+        <q>Client Error Status Codes</q>
+        <br/>
+        <ul>
+            <li><i>404 Not Found</i></li>
+            <p>The server cannot find a resource matching a URI</p>
+            <li><i>406 Not Acceptable</i></li>
+            <p>The server can only return response entities that do not match the client’s Accept header</p>
+            <li><i>409 Conflict</i></li>
+            <p>The resource is in a state that is in conflict with the request</p>
+            <p>Client should attempt to rectify the conflict and then resubmit the request</p>
+        </ul>
+    </div>
+
+    <div id="demo2" class="step" data-x="2000" data-y="500" data-rotate="90" data-scale="2">
+        <p><strong>live demo</strong>: Exception Handling
+            <a href="http://localhost:8080/accounts">localhost:8080/accounts</a> </p>
+    </div>
+
+    <div id="21" class="step slide" data-x="3000" data-y="100">
+        <q>Different Media types</q>
+        <br/>
+        <p>Content types are negotiated using headers</p>
+        <ul>
+            <li>Client describes what it wants with the Accept header</li>
+            <li>Server (and client during POST and PUT) describes what it is sending with <i>Content-Type</i> header</li>
+        </ul>
+    </div>
+
+    <div id="22" class="step slide" data-x="4000" data-y="100">
+        <q>Media types</q>
+        <br/>
+        <ul>
+            <li><i>Application</i></li>
+            <p>JSON: application/json</p>
+            <p>XML: application/xml</p>
+            <p>PDF: application/pdf</p>
+            <li><i>Text</i></li>
+            <p>HTML: text/html</p>
+            <p>PLAIN: text/plain</p>
+        </ul>
+    </div>
+
+    <div id="23" class="step slide" data-x="5000" data-y="100">
+        <q>Media types</q>
+        <br/>
+        <ul>
+            <li><i>Image</i></li>
+            <p>JPEG: image/jpeg</p>
+            <li><i>Audio</i></li>
+            <p>MP4: audio/mp4</p>
+            <p>WEBM: audio/webm</p>
+            <li><i>Video</i></li>
+            <p>MP4: video/mp4</p>
+            <p>WEBM: video/webm</p>
+            <li><i>Prefix <strong>vnd</strong> (vendor specific files)</i></li>
+            <p>application/vnd.android.package-archive - for apk files</p>
+            <p>application/vnd.ms-excel</p>
+        </ul>
+    </div>
 
     <!--
         
